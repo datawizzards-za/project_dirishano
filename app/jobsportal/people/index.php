@@ -5,7 +5,7 @@
   include_once('../../include/config.php');
   
   $pageID = "";
-  $index = "../home";
+  $index = "../";
   $logout_path = "../login/logout.php";             
   
   $username = $username_session = $userType = $CompName = $userAvatar = "";
@@ -48,7 +48,7 @@
       *********************************************************************************************************************************************************** -->
       <!--sidebar start-->
       <aside>
-          <?php require '../commons/aside.php'; ?>          
+          <?php require '../aside.php'; ?>          
       </aside>
       <!--sidebar end-->
       

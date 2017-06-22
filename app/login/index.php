@@ -111,7 +111,7 @@ if(isset($_SESSION['username'])){
                                   <input type="email" id="userMail" name="userMail" placeholder="Type your e-mail address here to reset your password" autocomplete="off" class="form-control placeholder-no-fix centered">
                               </div>
                               <div class="modal-footer centered">
-                                  <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
+                                  <button data-dismiss="modal" id="btnCancel" class="btn btn-default" type="button">Cancel</button>
                                   <button class="btn btn-theme" type="submit" name="btnForgotPass">Submit</button>
                               </div>
                           </div>
@@ -152,6 +152,15 @@ if(isset($_SESSION['username'])){
     <script src="../assets/js/jquery.js"></script>
     <script src="../scripts/js/submit.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript">    
+         $("#btnCancel").click(
+                 function() {
+                     $('#fpass_error').hide();  
+                     $('#fpass_success').hide();
+                 });
+    
+    </script>
   </body>
 </html>
 <?php }

@@ -19,6 +19,7 @@ $(document).ready(function() {
             }
         }
     );
+    
 
 
     /* ======= JOBS PORTAL =============*/
@@ -262,7 +263,7 @@ $(document).ready(function() {
         var data = $(this).serialize();
         $.ajax({
             type: 'POST',
-            url: 'scripts/jobseekerReg.php',
+            url: '../scripts/jobseekerReg.php',
             data: data,
             success: function(data) {
                 $("#loading").fadeOut('fast');
@@ -277,6 +278,10 @@ $(document).ready(function() {
                 } else if (data === "1") {
                     $('#error').show(function() {
                         $("#error_msg").html("Oops! Account could not be created. <br />Something went wrong. Please try again.");
+                    });
+                } else{
+                    $('#error').show(function() {
+                        $("#error_msg").html("Oops!!!<br > Something went wrong. <br >Please try again or contact support at support@jmbonline.co.za");
                     });
                 }
             }
@@ -810,7 +815,7 @@ $(document).ready(function() {
         var data = $(this).serialize();
         $.ajax({
             type: 'POST',
-            url: '../scripts/forgotPass.php',
+            url: '../../scripts/forgotPass.php',
             data: data,
             success: function(data) {
                 $("#fpass_loading").fadeOut('fast');

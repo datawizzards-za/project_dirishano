@@ -22,7 +22,7 @@
     $skills = $connection->query("SELECT * FROM skills WHERE PERSON='$username' ORDER BY ID DESC");
         
 ?>
-<div class="col-lg-9">
+<div class="col-lg-9 animated fadeInDown">
     <div class="col-lg-12 ds" style="background-color: #428bca; color: white">
       <h1 class="text-center">JMB Jobs Portal: CV 
       </h1>
@@ -161,7 +161,7 @@
                     <div class="panel-body">
                         <div class=" col-md-12">                               
                             <div id="_loading" class="text-center" hidden>
-                                <img src="../images/preloader.gif" height="64" width="64" alt="">
+                                <img src="../../images/preloader.gif" height="64" width="64" alt="">
                                 <br />
                                 <br />
                             </div>
@@ -177,7 +177,7 @@
                         
                         <form id="js_basic_info" method="POST">                        
                             <div class=" col-md-4">
-                                <input class="form-control centered" type="text" name="names"  placeholder="<?php echo $names==''?'Enter your Names':$names?>" disabled>
+                                <input class="form-control centered" type="text" name="names"  placeholder="<?php echo $names; ?>" disabled>
                             </div>
                             <div class="col-md-4">
                                 <select id="genderSelect" name="gender" style="width: 100%" data-placeholder="Select Gender" required>
@@ -222,7 +222,7 @@
                     <div class="panel-body"> 
                         <div class=" col-md-12">                               
                             <div id="c_loading" class="text-center" hidden>
-                                <img src="../images/preloader.gif" height="64" width="64" alt="">
+                                <img src="../../images/preloader.gif" height="64" width="64" alt="">
                                 <br />
                                 <br />
                             </div>
@@ -276,7 +276,6 @@
                         </div>              
                         <div class=" col-md-1"></div>  
                     </div>
-                     </form>
                  </div>
                 </div>
             </div>
@@ -290,7 +289,7 @@
                     <div class="panel-body">                   
                         <div class="col-md-12">                               
                             <div id="s_loading" class="text-center" hidden>
-                                <img src="../images/preloader.gif" height="64" width="64" alt="">
+                                <img src="../../images/preloader.gif" height="64" width="64" alt="">
                             </div>
 
                             <div id="s_success" class='col-lg-12 fadeInDownBig animated centered' hidden>
@@ -376,5 +375,5 @@ RIGHT SIDEBAR CONTENT
 *********************************************************************************************************************************************************** -->                    
 <div class="col-lg-3 ds">
     <!-- USERS ONLINE SECTION -->
-    <?php include 'jobslist.php'; ?>                      
+    <?php include './jobslist.php'; ?>                      
 </div><!-- /col-lg-3 -->

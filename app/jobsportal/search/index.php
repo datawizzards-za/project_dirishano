@@ -4,7 +4,7 @@
 
   include_once('../../include/config.php');
   
-  $index = "../home";
+  $index = "../people";
   $logout_path = "../login/logout.php";         
   
   
@@ -194,11 +194,7 @@ if($skills == "ALL" AND $loc=="ALL"){
           $("#search_id").append($("#table_vivio_filter"));
           $("input").attr('placeholder','Search Keyword');
           $("#table_vivio_length").remove();
-      } );
-      
-      
-    //MODAL
-    $(document).ready(function() {
+          
         $('#_person').on('hidden.bs.modal', function () {
             $(this).removeData('bs.modal');
         });

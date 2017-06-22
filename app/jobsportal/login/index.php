@@ -18,13 +18,9 @@ if(isset($_SESSION['username'])){
 
     <title>JMB Jobs Portal | Login</title>
     
-    <?php include 'assets.php'; ?>
+    <?php require '../commons/css.php'; ?>
     
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    
   </head>
 
   <body style="background-color: #000">
@@ -76,14 +72,21 @@ if(isset($_SESSION['username'])){
                                   <h4 class="modal-title centered">Forgot Password ?</h4>
                               </div>
                               
-                              <div id="fpass_success" class='col-lg-12 centered' hidden>
+                              <div id="fpass_loading" class="text-center animated bounceIn" hidden>
+                                <br />
+                                <img src="../../images/preloader.gif" height="64" width="64" alt="">
+                                <br />
+                                <br />
+                              </div>
+                              
+                              <div id="fpass_success" class='col-lg-12 centered animated bounceIn' hidden>
                                   <br />
                                   <div class='alert alert-success'>
                                       <div id="fpass_success_msg"></div>                                          
                                   </div>                                      
                               </div>
                               
-                              <div id="fpass_error" class='col-lg-12 centered' hidden>
+                              <div id="fpass_error" class='col-lg-12 centered animated bounceIn' hidden>
                                   <br />
                                   <div class='alert alert-danger'>
                                       <div id="fpass_error_msg"></div>                                          
@@ -94,7 +97,7 @@ if(isset($_SESSION['username'])){
                                   <input type="email" id="userMail" name="userMail" placeholder="Type your e-mail address here to reset your password" autocomplete="off" class="form-control placeholder-no-fix centered">
                               </div>
                               <div class="modal-footer centered">
-                                  <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
+                                  <button data-dismiss="modal" id="btnCancel" class="btn btn-default" type="button">Cancel</button>
                                   <button class="btn btn-theme" type="submit" name="btnForgotPass">Submit</button>
                               </div>
                           </div>
@@ -114,7 +117,7 @@ if(isset($_SESSION['username'])){
                         <div class="modal-body">
                             <div class="row centered">
                                 <div class="col-md-6 text-uppercase">
-                                    <h4><strong><a href="../../jobseeker.php">Job Seeker</a></strong></h4>
+                                    <h4><strong><a href="../../jobseeker/">Job Seeker</a></strong></h4>
                                 </div>
                                 <div class="col-md-6 text-uppercase">
                                     <h4><strong><a href="../../employer.php">Employer</a></strong></h4>
@@ -130,8 +133,18 @@ if(isset($_SESSION['username'])){
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="../../assets/js/jquery.js"></script>
-    <script src="../../assets/js/submit.js"></script>
+    <script src="../../scripts/js/submit.js"></script>
     <script src="../../assets/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript">    
+         $("#btnCancel").click(
+                 function() {
+                     $('#fpass_error').hide();  
+                     $('#fpass_success').hide();
+                 });
+    
+    </script>
+    
   </body>
 </html>
 <?php }

@@ -6,8 +6,10 @@
 <script src="../../assets/js/waves.min.js"></script>
 <script src="../../assets/js/form-elements.init.js"></script>
 
+<script src="../../scripts/js/script.js"></script>
+<script src="../../scripts/js/submit.js"></script>
+
 <script src="../../assets/js/jquery-1.8.3.min.js"></script>
-<script src="../../assets/js/submit.js"></script>
 <script src="../../assets/js/bootstrap.min.js"></script>
 <script class="include" type="text/javascript" src="../../assets/js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="../../assets/js/jquery.scrollTo.min.js"></script>

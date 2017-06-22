@@ -18,7 +18,7 @@
 
 <?php
     if($userType == 'JOBSEEKER' ){
-        echo "<li class='mt hvr-grow'><a href='mycv.php'><i class='fa fa-tasks'></i><span>MY CV</span></a></li>";
+        echo "<li class='mt hvr-grow'><a href='./cv/'><i class='fa fa-tasks'></i><span>MY CV</span></a></li>";
     }elseif($userType == 'EMPLOYER' ){
         echo "<li class='mt hvr-grow'><a href='myjob.php'><i class='fa fa-book'></i><span>MY JOBS</span></a></li>";
     }

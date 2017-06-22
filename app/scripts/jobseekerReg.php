@@ -7,18 +7,20 @@ include_once('../include/config.php');
  */
 
   $password = sanitize_post($_POST['password']);
-  $hashedPass = hashPass($password);
-  
   $email = sanitize_post($_POST['email_address']);
   $fullNames = sanitize_post($_POST['full_names']);
   
+  $hashedPass = hashPass($password);
   $submitRes = "";
   
-  if (checkUser($connection, $email)){$submitRes = "0";} else{
-      
+  if (checkUser($connection, $email)){
+      $submitRes = "0";
+  } else{
       $createUser = $connection->query("INSERT INTO jobseeker(`NAMES`, `EMAIL`, `PASSWORD`, `TYPE`) VALUES ('$fullNames', '$email', '$hashedPass', 'JOBSEEKER')");
       
-      if(!$createUser){ $submitRes = "1"; }else{
+      if(!$createUser){ 
+          $submitRes = "1";           
+      }else{
           $submitRes = "2";
           welcomeJobsPortal($email);
       }

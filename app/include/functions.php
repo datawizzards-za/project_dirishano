@@ -5,7 +5,7 @@ define('ENCRYPTION_KEY', 'd0a7e7997b6d5fcd55f4b5c32611b87cd923e88837b63bf2941ef8
 $year = date('Y');
 
 function create_dirs($connection, $user){
-    $root = realpath($_SERVER["DOCUMENT_ROOT"]);
+    $root = realpath($_SERVER["DOCUMENT_ROOT"])."jmbonline";
     $baseDIR = $root."/app/files";
     
     $userType = getUserType($connection, $user);
@@ -595,12 +595,17 @@ function welcomeJobsPortal($dst)
             . "Employers WILL NOT see your profile if you have not updated your CV. <br /> <br>"
             . "Should you have any quiries, please feel free to email us at support@jmbonline.co.za"
             . "<br /><br />"
-            . "<a href='http://www.jmbonline.co.za/app/jobsportal/deep_login.php?page_id=$pID'>Login</a> to your account to get started.<br />".$head.
+            . "<a href='http://www.jmbonline.co.za/app/jobsportal/login/'>Login</a> to your account to get started.<br />".$head.
             "Copyright &copy; $year. www.jmbonline.co.za. Ts and Cs apply.";
     $headers .= "From: jobsportal@jmbonline.co.za\n";
     $headers .= "Reply-To: jobsportal@jmbonline.co.za";
 
-    if(mail($dst, $email_subject, $email_body,$headers)){return 1;}else{return 0;}
+    if(mail($dst, $email_subject, $email_body,$headers))
+     {
+        return 1;        
+     }else{
+         return 0;         
+     }
 }
 
 function resetPass($dst)

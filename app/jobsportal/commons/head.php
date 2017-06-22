@@ -5,8 +5,6 @@
 <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 <link rel="shortcut icon" type="image/png" href="../../../img/icon.png"/>
 
-<title>JMB Jobs Portal </title>
-
 <!--external css-->
 <link href="../../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="../../assets/lineicons/style.css">    
