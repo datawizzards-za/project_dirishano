@@ -1,0 +1,18 @@
+[07-Dec-2016 11:12:35 UTC] PHP Warning:  include(views/employer.php): failed to open stream: No such file or directory in /home/jmbonjap/public_html/app/jobsportal/index.php on line 63
+[07-Dec-2016 11:12:35 UTC] PHP Warning:  include(views/employer.php): failed to open stream: No such file or directory in /home/jmbonjap/public_html/app/jobsportal/index.php on line 63
+[07-Dec-2016 11:12:35 UTC] PHP Warning:  include(): Failed opening 'views/employer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/jmbonjap/public_html/app/jobsportal/index.php on line 63
+[12-May-2017 21:18:34 UTC] PHP Warning:  include(views/employer.php): failed to open stream: No such file or directory in /home/jmbonjap/public_html/app/jobsportal/index.php on line 63
+[12-May-2017 21:18:34 UTC] PHP Warning:  include(views/employer.php): failed to open stream: No such file or directory in /home/jmbonjap/public_html/app/jobsportal/index.php on line 63
+[12-May-2017 21:18:34 UTC] PHP Warning:  include(): Failed opening 'views/employer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/jmbonjap/public_html/app/jobsportal/index.php on line 63
+[12-May-2017 21:19:02 UTC] PHP Warning:  include(views/employer_pro.php): failed to open stream: No such file or directory in /home/jmbonjap/public_html/app/jobsportal/profile.php on line 68
+[12-May-2017 21:19:02 UTC] PHP Warning:  include(views/employer_pro.php): failed to open stream: No such file or directory in /home/jmbonjap/public_html/app/jobsportal/profile.php on line 68
+[12-May-2017 21:19:02 UTC] PHP Warning:  include(): Failed opening 'views/employer_pro.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/jmbonjap/public_html/app/jobsportal/profile.php on line 68
+[29-May-2017 14:34:35 UTC] PHP Warning:  include(jobslist.php): failed to open stream: No such file or directory in /home/jmbonjap/public_html/app/jobsportal/views/jobseeker.php on line 107
+[29-May-2017 14:34:36 UTC] PHP Warning:  include(jobslist.php): failed to open stream: No such file or directory in /home/jmbonjap/public_html/app/jobsportal/views/jobseeker.php on line 107
+[29-May-2017 14:34:36 UTC] PHP Warning:  include(): Failed opening 'jobslist.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/jmbonjap/public_html/app/jobsportal/views/jobseeker.php on line 107
+[29-May-2017 14:35:25 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/jmbonjap/public_html/app/jobsportal/views/jobslist.php on line 6
+[29-May-2017 14:35:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/jmbonjap/public_html/app/jobsportal/views/jobslist.php on line 6
+[29-May-2017 14:39:11 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/jmbonjap/public_html/app/jobsportal/views/jobslist.php on line 6
+[30-May-2017 21:34:41 UTC] PHP Warning:  include(views/employer.php): failed to open stream: No such file or directory in /home/jmbonjap/public_html/app/jobsportal/index.php on line 63
+[30-May-2017 21:34:41 UTC] PHP Warning:  include(views/employer.php): failed to open stream: No such file or directory in /home/jmbonjap/public_html/app/jobsportal/index.php on line 63
+[30-May-2017 21:34:41 UTC] PHP Warning:  include(): Failed opening 'views/employer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/jmbonjap/public_html/app/jobsportal/index.php on line 63

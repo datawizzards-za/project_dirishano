@@ -1,0 +1,4 @@
+[06-Dec-2016 13:52:04 UTC] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/jmbonjap/public_html/app/include/config.php on line 8
+[06-Dec-2016 13:52:04 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/jmbonjap/public_html/app/include/config.php on line 9
+[06-Dec-2016 14:08:33 UTC] PHP Warning:  mysqli::mysqli(): (HY000/2003): Can't connect to MySQL server on 'jmbonjap_jmbdb' (110) in /home/jmbonjap/public_html/app/include/config.php on line 8
+[06-Dec-2016 14:09:36 UTC] PHP Warning:  mysqli_connect(): (HY000/2003): Can't connect to MySQL server on 'jmbonjap_jmbdb' (110) in /home/jmbonjap/public_html/app/include/config.php on line 9
