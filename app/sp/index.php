@@ -418,14 +418,16 @@ if (!isset($username_session))
     <?php require_once '../commons/js.php'; ?>   
 
     <script type="text/javascript">
-            $("#uploadFilec").click(function(e){
-
-            $("#uploadFile").click();
-            $('#previewing').attr('src', e.target.result);
-        });
-        $("#previewing").click(function(e){
-            $("#file").click();
-        });
+            $("#uploadFilec").click(
+                    function(e){
+                        $("#uploadFile").click();
+                        $('#previewing').attr('src', e.target.result);
+                    });
+                    
+            $("#previewing").click(
+                    function(e){
+                        $("#file").click();
+                    });
     </script>
     
     

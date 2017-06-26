@@ -25,7 +25,7 @@
 ?>
 
     <li class="mt hvr-grow">
-        <a href="profile.php">
+        <a href="./profile/">
             <i class="fa fa-user"></i>
             <span>PROFILE</span>
         </a>

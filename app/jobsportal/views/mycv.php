@@ -370,10 +370,10 @@
     </div><!-- /row mt -->	                      
 </div><!-- /col-lg-9 END SECTION MIDDLE -->
 
-<!-- **********************************************************************************************************************************************************
-RIGHT SIDEBAR CONTENT
-*********************************************************************************************************************************************************** -->                    
-<div class="col-lg-3 ds">
-    <!-- USERS ONLINE SECTION -->
-    <?php include './jobslist.php'; ?>                      
-</div><!-- /col-lg-3 -->
+
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="job_full" class="modal fade">    
+    <div class="modal-dialog animated bounceIn" role="document">
+        <div class="modal-content" >
+        </div>
+    </div>
+</div>

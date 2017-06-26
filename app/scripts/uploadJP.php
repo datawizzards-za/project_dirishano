@@ -4,18 +4,24 @@ include_once('../include/config.php');
 $username = $_SESSION['username'];
 
 $usrTyp = getUserType($connection, $username);
+$userAvatar = getDIRAvatar($connection, $username);
 
 $user = md5($username);
 $res = "";
+$targetPath = $mov_cmd = "";
+$sourcePath = "Nothing";
 
 if(isset($_FILES["file"]["type"]))
 {
-    $validextensions = array("jpeg", "jpg", "png");
+    $validextensions = array("jpeg", "jpg", "png", "JPEG", "JPG", "PNG");
     $temporary = explode(".", $_FILES["file"]["name"]);
     $file_extension = end($temporary);
-    if ((($_FILES["file"]["type"] == "image/png") || ($_FILES["file"]["type"] == "image/jpg") || ($_FILES["file"]["type"] == "image/jpeg")
-    ) && ($_FILES["file"]["size"] < 100000000)//Approx. 100kb files can be uploaded.
-    && in_array($file_extension, $validextensions)){
+    
+    if ((   ($_FILES["file"]["type"] == "image/png") || ($_FILES["file"]["type"] == "image/PNG") ||
+        ($_FILES["file"]["type"] == "image/jpg") ||  ($_FILES["file"]["type"] == "image/JPG") || 
+        ($_FILES["file"]["type"] == "image/JPEG") || ($_FILES["file"]["type"] == "image/jpeg")) && 
+        ($_FILES["file"]["size"] < 100000000) && //Approx. 100kb files can be uploaded.
+        in_array($file_extension, $validextensions)){
         if ($_FILES["file"]["error"] > 0)
         {
             $res = "0"; //echo "<script type='text/javascript'>alert('File upload Error...!!');</script>";
@@ -31,7 +37,10 @@ if(isset($_FILES["file"]["type"]))
                 }else{
                     $theUser = $connection->query("UPDATE `employer` SET `AVATAR`='$avater' WHERE EMAIL='$username'");
                 }
+                
+                //unlink($userAvatar);
                 $res = "1";
+                
             }else{
                 $res = "2";
             }
@@ -41,3 +50,4 @@ if(isset($_FILES["file"]["type"]))
     }
 }
 echo $res;
+

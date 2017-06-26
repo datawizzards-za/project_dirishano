@@ -5,7 +5,7 @@ define('ENCRYPTION_KEY', 'd0a7e7997b6d5fcd55f4b5c32611b87cd923e88837b63bf2941ef8
 $year = date('Y');
 
 function create_dirs($connection, $user){
-    $root = realpath($_SERVER["DOCUMENT_ROOT"])."jmbonline";
+    $root = realpath($_SERVER["DOCUMENT_ROOT"])."/jmbonline";
     $baseDIR = $root."/app/files";
     
     $userType = getUserType($connection, $user);
@@ -184,6 +184,22 @@ function editBasicInfo($username, $connection){
     $submitRes = "";
     
     $updateBasicInfo = $connection->query("UPDATE jobseeker SET AGE='$age', GENDER='$gender', CONTACT='$phoneNo', RESIDENTIAL='$address' WHERE EMAIL='$username'");
+        
+    if($updateBasicInfo){
+        $submitRes = "1";
+    }else{
+        $submitRes = "0";
+    }
+    return $submitRes;   
+}
+
+function editJS($username, $connection){   
+      
+    $names = sanitize_post($_POST['js_names']);
+    
+    $submitRes = "";
+    
+    $updateBasicInfo = $connection->query("UPDATE jobseeker SET NAMES='$names' WHERE EMAIL='$username'");
         
     if($updateBasicInfo){
         $submitRes = "1";

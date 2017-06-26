@@ -28,6 +28,10 @@ switch ($switch) {
         echo editSUP($username, $connection);
         break;
     
+    case "JS":
+        echo editJS($username, $connection);
+        break;
+    
     default:
         break;
 }

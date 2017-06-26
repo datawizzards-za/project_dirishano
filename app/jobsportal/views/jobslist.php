@@ -1,24 +1,36 @@
-<h3>JOBS</h3>                      
+<h3>OUR TOP JOBS</h3>                      
 <?php 
 
-$suppliers = $connection->query("SELECT * FROM  `jobadverts`");
+$jobs = $connection->query("SELECT * FROM  `jobadverts`");
 
-foreach ($suppliers as $supplier){
-    $jobTitle = $supplier['TITLE'];
-    $supCatalogue = $supplier['WEBADDRESS'];
-    $supEmail = $supplier['EMAILADDRESS'];
-    $supAvatar = getAvatar($connection, $supEmail);?>
+foreach ($jobs as $job){
+    $jobTitle = $job['TITLE'];
+    $employer = $job['EMAIL'];
+    $jobLocation = $job['LOCATION'];
+    $jobID = $job['ID'];
+    $deadline = $job['CLOSINGDATE'];
+    
+    #$closing = new DateTime($deadline);
+    #$today = new DateTime(date('Y-m-d'));
+    
+    #$daysRemaining = $today->diff($closing)->format('%m');
+    
+    $employerAvatar = getDIRAvatar($connection, $employer);
+    
+    ?>
 
 <!-- Third Member -->
 <div class="desc hvr-grow">
-    <a href="catalogue.php?page_id=<?php echo md5($supEmail)?>">
+    <a data-toggle="modal" data-target="#job_full" href="modal_ad.php?id=<?php echo $jobID?>">
     <div class="thumb">
         <img class="img-circle" src="<?php echo $supAvatar ?>" width="35px" height="35px" align="">
     </div>
     <div class="details">
         <p>
-            <?php echo $jobTitle ?><br />
-            <muted><?php echo $supCatalogue ?></muted>
+            <?php echo strtoupper($jobTitle) ?><br />
+            <muted>
+                Location: <?php echo $jobLocation ?> <br />Closing <?php echo $deadline ?>.
+            </muted>
         </p>
     </div>
     </a>

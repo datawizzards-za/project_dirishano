@@ -43,7 +43,7 @@ if(isset($_FILES["file"]["type"]))
     else{
         $theUser = $connection->query("UPDATE `supplier` SET `AVATAR`='$avater' WHERE EMAILADDRESS='$username'");
     }
-    unlink($userAvatar);
+    //unlink($userAvatar);
     $res = "1";
     }
 }

@@ -42,7 +42,6 @@ $(document).ready(function(e) {
                 $('#pic_loading').fadeOut('fast');
                 $('#btnSave').hide();
                 $('#pic_error').show(function() {
-                    alert(data)
                     $("#error_msg").html("Oops. A servere technical error occured. <br>Please contact support.");
                 });
             }
@@ -51,12 +50,12 @@ $(document).ready(function(e) {
 
     $("#changeImage").on('submit', (function(e) {
         $('#pic_loading').fadeIn('fast');
-
+        
         e.preventDefault();
         $("#message").empty();
         $('#pic_error').fadeOut('fast');
         $.ajax({
-            url: "../scripts/uploadJP.php", // Url to which the request is send
+            url: "../../scripts/uploadJP.php", // Url to which the request is send
             type: "POST", // Type of request to be send, called as method
             data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
             contentType: false, // The content type used when sending data to the server.

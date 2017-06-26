@@ -63,6 +63,15 @@
                         include 'views/employer.php';
                     }
                   ?>
+                  
+                  
+                <!-- **********************************************************************************************************************************************************
+                RIGHT SIDEBAR CONTENT
+                *********************************************************************************************************************************************************** -->                    
+                <div class="col-lg-3 ds">
+                    <!-- USERS ONLINE SECTION -->
+                    <?php include 'views/jobslist.php'; ?>                      
+                </div><!-- /col-lg-3 -->
               
               </div><! --/row -->
           </section>
@@ -70,11 +79,7 @@
       <!--main content end-->      
 
       <!--footer start-->
-      <footer class="site-footer">
-          <div class="text-center">
-              <i><strong>Powered by iTechHub</strong>. </i>Copyright &copy; 2016
-          </div>
-      </footer>
+      <?php require '../footer.php'; ?>
       <!--footer end-->
   </section>
       

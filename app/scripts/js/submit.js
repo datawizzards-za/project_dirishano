@@ -5,7 +5,7 @@
  */
 
 $(document).ready(function() {
-
+    
     $("#password, #confirm_password").keyup(
         function() {
             if ($("#password").val() !== $("#confirm_password").val()) {
@@ -21,8 +21,39 @@ $(document).ready(function() {
     );
     
 
-
     /* ======= JOBS PORTAL =============*/
+   
+    $(document).on('submit', '#edit_js_pro', function() {
+        alert('TEST');
+        $('#pro_error').fadeOut('fast');
+        $('#pro_loading').fadeIn('fast');
+
+        var data = $(this).serialize();
+        $.ajax({
+            type: 'POST',
+            url: '../../scripts/profiles.php?switch=JS',
+            data: data,
+            success: function(data) {
+                $('#pro_loading').fadeOut('fast');
+                if (data === "1") {
+                    $('#pro_success').show(function() {
+                        $("#pro_success_msg").html("Profile updated.");
+                        //clear all fields
+                        $('#editCl').trigger("reset");
+                    });
+                } else if (data === "2") {
+                    $('#pro_error').show(function() {
+                        $("#pro_error_msg").html("Oops! Something went wrong. Please try again.");
+                    });
+                } else {
+                    $('#pro_error').show(function() {
+                        $("#pro_error_msg").html("Oops! We seem to be experiencing some technical problems. <br />Please try again later.");
+                    });
+                }
+            }
+        });
+        return false;
+    });
 
     $(document).on('submit', '#employer_reg', function() {
         $("#error").hide();
@@ -343,7 +374,7 @@ $(document).ready(function() {
         var data = $(this).serialize();
         $.ajax({
             type: 'POST',
-            url: '../scripts/changePass.php',
+            url: '../../scripts/changePass.php',
             data: data,
             success: function(data) {
                 $('#loading').fadeOut('fast');
