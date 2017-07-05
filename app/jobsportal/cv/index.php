@@ -64,7 +64,7 @@
                 
                   <div class="col-lg-3 ds">
                     <!-- USERS ONLINE SECTION -->
-                    <?php include '../jobslist.php'; ?>                      
+                    <?php require '../commons/jobslist.php'; ?>                      
                   </div><!-- /col-lg-3 -->
               
               </div><! --/row -->
@@ -78,10 +78,7 @@
   </section>
       
       <!-- Import JS -->
-      <?php include '../commons/js.php'; ?>
-      
-      
-    <script type="text/javascript" src="../../assets/js/select2.min.js"></script>
+      <?php require '../commons/js_1.php'; ?>
       
       <!--script for this page-->
     <script type="text/javascript" src="../../assets/js/jquery.dataTables.min.js"></script>

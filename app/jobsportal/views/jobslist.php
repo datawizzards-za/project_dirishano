@@ -23,7 +23,7 @@ foreach ($jobs as $job){
 <div class="desc hvr-grow">
     <a data-toggle="modal" data-target="#job_full" href="modal_ad.php?id=<?php echo $jobID?>">
     <div class="thumb">
-        <img class="img-circle" src="<?php echo $supAvatar ?>" width="35px" height="35px" align="">
+        <img class="img-circle" src="<?php echo $employerAvatar ?>" width="35px" height="35px" align="">
     </div>
     <div class="details">
         <p>

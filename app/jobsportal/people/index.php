@@ -31,6 +31,7 @@
 <!DOCTYPE html> 
 <html lang="en">
     <head>
+        <title>JMB Jobs Portal </title>
         <?php require '../commons/head.php'; ?>
     </head>    
   <body>
@@ -82,14 +83,17 @@
   </section>
       
       <!-- Import JS -->
-      <?php require '../commons/js.php'; ?>
+      <?php require '../commons/js_1.php'; ?>
       
       <script>
+        /*
+          * $(document).ready(function() {
+          }); 
+        */
       
         $(function(){
               $('select.styled').customSelect();
           });
-                
       </script>
       
   </body>

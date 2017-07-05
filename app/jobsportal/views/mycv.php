@@ -89,7 +89,7 @@
                             </div>
                         </div>
                         
-                        <div class="panel panel-info ng-isolate-scope">
+                        <div class="panel panel-primary ng-isolate-scope">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a href="#collapseCert" data-toggle="collapse" class="accordion-toggle" data-parent="#accordionDemo">
@@ -119,7 +119,7 @@
                             </div>
                         </div>
                         
-                        <div class="panel panel-success ng-isolate-scope">
+                        <div class="panel panel-primary ng-isolate-scope">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
                                     <a href="#collapseSkills" data-toggle="collapse" class="accordion-toggle text-uppercase" data-parent="#accordionDemo">
@@ -180,7 +180,7 @@
                                 <input class="form-control centered" type="text" name="names"  placeholder="<?php echo $names; ?>" disabled>
                             </div>
                             <div class="col-md-4">
-                                <select id="genderSelect" name="gender" style="width: 100%" data-placeholder="Select Gender" required>
+                                <select id="genderSelect" name="gender" style="width: 100%" data-placeholder="Select Gender" required <?php echo $gender==''?'':'disabled'?>>
                                         <option><?php echo $gender==''?'':$gender?></option>	<!-- empty, for placeholder -->
                                         <option value="1">Female</option>
                                         <option value="2">Male</option>
@@ -255,23 +255,23 @@
                         <div class=" col-md-1"></div>                     
                         <div class=" col-md-10">
                             <div class="list-group">
-                                <form id="del_cert" method="POST">   
                                 <?php 
-                                    foreach($certs as $item){
-                                        $cert_name = $item['NAME'];
-                                        $cert_year = $item['YEAR'];
+                                    foreach($certs as $cert){
+                                        $cert_name = $cert['NAME'];
+                                        $cert_year = $cert['YEAR'];
                                     
                                     ?>
-                                    <input type="hidden" class="form-control" name="cert_id" value="<?php echo $item['ID']; ?>">
-                                    
+                                <form id="del_cert" method="POST"> 
                                     <a class="list-group-item hvr-grow">
                                         <?php echo $cert_name.", ".$cert_year; ?>
                                         <button type="submit" class="close" >
-                                                <span aria-hidden="true">X</span>
+                                            <span aria-hidden="true" class="text-danger">X</span>
                                         </button>
                                     </a>
-                                    <?php } ?>
+                                    
+                                    <input type="hidden" class="form-control" name="cert_id" id="cert_id" value="<?php echo $cert['ID']; ?>">
                                 </form>
+                                    <?php } ?>
                             </div>                            
                         </div>              
                         <div class=" col-md-1"></div>  
@@ -325,13 +325,13 @@
                         <div class=" col-md-1"></div>                     
                         <div class=" col-md-10">
                             <div class="list-group">
-                                <form id="del_skill" method="POST">   
                                 <?php 
                                     foreach($skills as $item){
                                         $skill_name = $item['SNAME'];
                                         $skill_level = $item['COMPETENCY'];
                                     
                                     ?>
+                                <form id="del_skill" method="POST">   
                                     <input type="hidden" class="form-control" name="skill_id" value="<?php echo $item['ID']; ?>">
                                     
                                     <a class="list-group-item hvr-grow">
@@ -340,8 +340,8 @@
                                                 <span aria-hidden="true">X</span>
                                         </button>
                                     </a>
-                                    <?php } ?>
                                 </form>
+                                    <?php } ?>
                             </div>                            
                         </div>              
                         <div class=" col-md-1"></div>  

@@ -50,6 +50,31 @@ function create_dirs($connection, $user){
     }   
 }
 
+function getDIRSAvatar($connection, $user){
+    $avatarName = $dp = "";
+    $avatarNames = $connection->query("SELECT AVATAR FROM clients WHERE EMAILADDRESS='$user' UNION "
+            . "SELECT AVATAR FROM serviceprovider WHERE EMAILADDRESS='$user' UNION "
+            . "SELECT AVATAR FROM supplier WHERE EMAILADDRESS='$user' UNION "
+            . "SELECT AVATAR FROM jobseeker WHERE EMAIL='$user' UNION "
+            . "SELECT AVATAR FROM employer WHERE EMAIL='$user'");
+    
+    foreach ($avatarNames as $avName){$avatarName = $avName['AVATAR'];}
+    
+    $encryptedUsr = md5($user);
+    
+    $baseDIR = "../../files";
+    
+    $img_dir = "$baseDIR/imgs/$encryptedUsr/";
+    
+    if( $avatarName == "" || $avatarName == "NULL" || !file_exists($img_dir) || !file_exists("$img_dir$avatarName")) { 
+        $dp = "$baseDIR/imgs/default.png";
+    }else{
+        $dp = "$img_dir$avatarName";
+    }
+    
+    return $dp;
+}
+
 function getDIRAvatar($connection, $user){
     $avatarName = $dp = "";
     $avatarNames = $connection->query("SELECT AVATAR FROM clients WHERE EMAILADDRESS='$user' UNION "

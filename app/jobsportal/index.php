@@ -70,7 +70,7 @@
                 *********************************************************************************************************************************************************** -->                    
                 <div class="col-lg-3 ds">
                     <!-- USERS ONLINE SECTION -->
-                    <?php include 'views/jobslist.php'; ?>                      
+                    <?php require 'views/jobslist.php'; ?>                      
                 </div><!-- /col-lg-3 -->
               
               </div><! --/row -->
@@ -84,7 +84,7 @@
   </section>
       
       <!-- Import JS -->
-      <?php include 'js.php'; ?>
+      <?php require 'js.php'; ?>
       
       <!--script for this page-->
     <script type="text/javascript" src="../assets/js/jquery.dataTables.min.js"></script>

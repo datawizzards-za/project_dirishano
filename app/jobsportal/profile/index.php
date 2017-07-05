@@ -79,7 +79,7 @@ $userAvatar = getDIRAvatar($connection, $username);
       *********************************************************************************************************************************************************** -->                  
                   <div class="col-lg-3 ds">
                       <!-- USERS ONLINE SECTION -->
-                      <?php include '../views/jobslist.php'; ?>
+                      <?php require '../commons/jobslist.php'; ?>
                   </div><!-- /col-lg-3 -->
               </div>
           </section>

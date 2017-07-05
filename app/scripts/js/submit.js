@@ -157,7 +157,7 @@ $(document).ready(function() {
         var data = $(this).serialize();
         $.ajax({
             type: 'POST',
-            url: '../scripts/delete_cv.php?switch=skill',
+            url: '../../scripts/delete_cv.php?switch=skill',
             data: data,
             success: function(data) {
                 $('#s_loading').fadeOut('fast');
@@ -182,7 +182,7 @@ $(document).ready(function() {
         var data = $(this).serialize();
         $.ajax({
             type: 'POST',
-            url: '../scripts/update_cv.php?switch=skills',
+            url: '../../scripts/update_cv.php?switch=skills',
             data: data,
             success: function(data) {
                 $('#s_loading').fadeOut('fast');
@@ -211,7 +211,7 @@ $(document).ready(function() {
         var data = $(this).serialize();
         $.ajax({
             type: 'POST',
-            url: '../scripts/delete_cv.php?switch=cert',
+            url: '../../scripts/delete_cv.php?switch=cert',
             data: data,
             success: function(data) {
                 $('#c_loading').fadeOut('fast');
@@ -236,7 +236,7 @@ $(document).ready(function() {
         var data = $(this).serialize();
         $.ajax({
             type: 'POST',
-            url: '../scripts/update_cv.php?switch=cert',
+            url: '../../scripts/update_cv.php?switch=cert',
             data: data,
             success: function(data) {
                 $('#c_loading').fadeOut('fast');
@@ -265,7 +265,7 @@ $(document).ready(function() {
         var data = $(this).serialize();
         $.ajax({
             type: 'POST',
-            url: '../scripts/update_cv.php?switch=basic',
+            url: '../../scripts/update_cv.php?switch=basic',
             data: data,
             success: function(data) {
                 $('#_loading').fadeOut('fast');

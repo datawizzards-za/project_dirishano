@@ -18,29 +18,41 @@ $submitRes = $people = "";
  
 if($skills == "ALL" AND $loc=="ALL"){
     
-    $people = $connection->query("SELECT DISTINCT(jobseeker.NAMES), jobseeker.AGE, jobseeker.GENDER, jobseeker.EMAIL, certificates.NAME "
-                            . "FROM skills "
-                            . "INNER JOIN certificates ON skills.PERSON=certificates.PERSON "
-                            . "INNER JOIN jobseeker ON certificates.PERSON=jobseeker.EMAIL");
+    $people = $connection->query("SELECT jobseeker.NAMES, jobseeker.GENDER,jobseeker.EMAIL, certificates.NAME, jobseeker.EMAIL, jobseeker.AGE, MAX(certificates.NAME) "
+            . "FROM jobseeker "
+            . "JOIN certificates "
+            . "ON jobseeker.EMAIL=certificates.PERSON "
+            . "GROUP BY jobseeker.NAMES");
     }elseif( $skills == "ALL" ){
-            $people = $connection->query("SELECT * "
-                                        . "FROM skills "
-                                        . "INNER JOIN certificates ON skills.PERSON=certificates.PERSON "
-                                        . "INNER JOIN jobseeker ON certificates.PERSON=jobseeker.EMAIL "
-                                        . "WHERE jobseeker.RESIDENTIAL LIKE '%$loc%'"); 
+            $people = $connection->query("SELECT jobseeker.NAMES, jobseeker.GENDER,jobseeker.EMAIL, certificates.NAME, jobseeker.EMAIL, jobseeker.AGE, MAX(certificates.NAME) "
+            . "FROM jobseeker "
+            . "JOIN certificates "
+            . "ON jobseeker.EMAIL=certificates.PERSON "
+            . "WHERE jobseeker.RESIDENTIAL LIKE '%$loc%'"
+            . "GROUP BY jobseeker.NAMES"); 
         
     }elseif( $loc == "ALL" ){
             $people = $connection->query("SELECT * "
-                                        . "FROM skills "
-                                        . "INNER JOIN certificates ON skills.PERSON=certificates.PERSON "
-                                        . "INNER JOIN jobseeker ON certificates.PERSON=jobseeker.EMAIL "
-                                        . "WHERE skills.SNAME LIKE '%$skills%'"); 
+                    . "FROM ( "
+                    . "SELECT skills.SNAME, skills.PERSON, certificates.NAME "
+                    . "FROM skills "
+                    . "JOIN certificates "
+                    . "ON skills.PERSON=certificates.PERSON "
+                    . "WHERE skills.SNAME LIKE '%$skills%'"
+                    . ") AS T1 "
+                    . "JOIN jobseeker ON T1.PERSON=jobseeker.EMAIL GROUP BY jobseeker.NAMES"); 
     }else{
             $people = $connection->query("SELECT * "
-                                        . "FROM skills "
-                                        . "INNER JOIN certificates ON skills.PERSON=certificates.PERSON "
-                                        . "INNER JOIN jobseeker ON certificates.PERSON=jobseeker.EMAIL "
-                                        . "WHERE skills.SNAME LIKE '%$skills%' AND jobseeker.RESIDENTIAL LIKE '%$loc%'"); 
+                    . "FROM ( "
+                    . "SELECT skills.SNAME, skills.PERSON, certificates.NAME "
+                    . "FROM skills "
+                    . "JOIN certificates "
+                    . "ON skills.PERSON=certificates.PERSON "
+                    . "WHERE skills.SNAME LIKE '%$skills%'"
+                    . ") AS T1 "
+                    . "JOIN jobseeker AS T2 ON T1.PERSON=T2.EMAIL "
+                    . "WHERE T2.RESIDENTIAL LIKE '%$loc%'"
+                    . "GROUP BY T2.NAMES"); 
     }
 
 ?>
@@ -48,6 +60,7 @@ if($skills == "ALL" AND $loc=="ALL"){
 <!DOCTYPE html> 
 <html lang="en">
     <head>
+        <title>Candidate Search</title>
         <?php require '../commons/head.php'; ?>
     </head>    
   <body>
@@ -182,7 +195,7 @@ if($skills == "ALL" AND $loc=="ALL"){
   </section>
       
       <!-- Import JS -->
-      <?php require '../commons/js.php'; ?>
+      <?php require '../commons/js_1.php'; ?>
       
       
       <!--script for this page-->

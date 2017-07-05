@@ -27,7 +27,7 @@
                 <span>Register</span>
             </a>
             <ul class="sub">
-                <li class="hvr-grow"><a href="../../jobseeker.php">Job Seeker</a></li>
+                <li class="hvr-grow"><a href="../../jobseeker/">Job Seeker</a></li>
                 <li class="hvr-grow"><a  href="../../employer.php">Employer</a></li>
             </ul>
         </li>
